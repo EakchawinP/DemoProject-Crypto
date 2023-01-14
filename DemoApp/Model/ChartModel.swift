@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct ChartModel: Identifiable {
+    let id = UUID()
+    let date: Date
+    let value: Double
+    
+    public init(date: Date, value: Double) {
+        self.date = date
+        self.value = value
+    }
+}

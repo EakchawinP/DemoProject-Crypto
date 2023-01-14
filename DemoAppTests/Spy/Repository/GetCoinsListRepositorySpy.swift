@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import DemoApp
+import Combine
+
+class GetCoinsListRepositorySpy: GetCoinsListRepository {
+    var invokedExecute = false
+    var invokedExecuteCount = 0
+    var stubbedExecuteResult: AnyPublisher<CoinsListResponse, Error>!
+    
+    func getCoinList() -> AnyPublisher<CoinsListResponse, Error> {
+        invokedExecute = true
+        invokedExecuteCount += 1
+        return stubbedExecuteResult
+    }
+}

@@ -11,7 +11,8 @@ import SwiftUI
 struct DemoAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            CrytoInfoView(viewModel: CrytoInfoViewModel())
         }
     }
 }

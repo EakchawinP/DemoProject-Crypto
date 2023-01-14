@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import DemoApp
+import Combine
+
+class GetCoinsListUseCaseSpy: GetCoinsListUseCase {
+    var invokedGetCoinsList = false
+    var invokedGetCoinsListCount = 0
+    var stubbedGetCoinsListResult: AnyPublisher<CoinsListResponse, Error>!
+    
+    func execute() -> AnyPublisher<CoinsListResponse, Error> {
+        invokedGetCoinsList = true
+        invokedGetCoinsListCount += 1
+        return stubbedGetCoinsListResult
+    }
+}
